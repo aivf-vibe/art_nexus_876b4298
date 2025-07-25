@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Models - StartFlow</title>
+    <meta name="description" content="Browse and compare 500+ AI models from top providers. Find the perfect model for your use case with detailed specs, pricing, and performance metrics.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="models.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-rocket"></i>
+                <span>StartFlow</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="models.html" class="nav-link active">Models</a>
+                <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+                <a href="providers.html" class="nav-link">Providers</a>
+                <a href="apps.html" class="nav-link">Apps</a>
+                <a href="docs.html" class="nav-link">Docs</a>
+                <button class="nav-cta">Get Started</button>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>AI Models</h1>
+            <p>Discover and compare 500+ AI models from leading providers</p>
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="modelSearch" placeholder="Search models, providers, or capabilities...">
+                </div>
+                <div class="filter-tags">
+                    <span class="filter-tag active" data-filter="all">All Models</span>
+                    <span class="filter-tag" data-filter="vision">Vision</span>
+                    <span class="filter-tag" data-filter="code">Code</span>
+                    <span class="filter-tag" data-filter="multilingual">Multilingual</span>
+                    <span class="filter-tag" data-filter="reasoning">Reasoning</span>
+                    <span class="filter-tag" data-filter="fast">Fast</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label>Provider</label>
+                    <select id="providerFilter">
+                        <option value="">All Providers</option>
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="google">Google</option>
+                        <option value="meta">Meta</option>
+                        <option value="mistral">Mistral</option>
+                        <option value="cohere">Cohere</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Price Range</label>
+                    <select id="priceFilter">
+                        <option value="">Any Price</option>
+                        <option value="0-1">$0 - $1 per 1M tokens</option>
+                        <option value="1-5">$1 - $5 per 1M tokens</option>
+                        <option value="5-10">$5 - $10 per 1M tokens</option>
+                        <option value="10+">$10+ per 1M tokens</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Context Length</label>
+                    <select id="contextFilter">
+                        <option value="">Any Context</option>
+                        <option value="4k">4K tokens</option>
+                        <option value="8k">8K tokens</option>
+                        <option value="32k">32K tokens</option>
+                        <option value="128k">128K+ tokens</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Sort By</label>
+                    <select id="sortFilter">
+                        <option value="popularity">Popularity</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="performance">Performance</option>
+                        <option value="newest">Newest</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Models Grid -->
+    <section class="models-section">
+        <div class="container">
+            <div class="models-header">
+                <h2>All Models <span id="modelCount">(500+)</span></h2>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="models-grid" id="modelsGrid">
+                <!-- Model cards will be populated by JavaScript -->
+            </div>
+
+            <div class="load-more">
+                <button class="btn-outline" id="loadMore">
+                    <i class="fas fa-plus"></i>
+                    Load More Models
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Model Details Modal -->
+    <div class="modal" id="modelModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Model Details</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Model details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-rocket"></i>
+                        <span>StartFlow</span>
+                    </div>
+                    <p>One API to access hundreds of AI models. Built for developers, by developers.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="models.html">Models</a>
+                    <a href="leaderboard.html">Leaderboard</a>
+                    <a href="providers.html">Providers</a>
+                    <a href="apps.html">Apps</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Developers</h4>
+                    <a href="docs.html">Documentation</a>
+                    <a href="api.html">API Reference</a>
+                    <a href="sdk.html">SDKs</a>
+                    <a href="examples.html">Examples</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 StartFlow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="models.js"></script>
+</body>
+</html>

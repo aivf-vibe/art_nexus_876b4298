@@ -1,0 +1,216 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - StartFlow</title>
+    <meta name="description" content="Compare AI models by performance, price, and capabilities. Find the best model for your specific use case with our comprehensive leaderboard.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="leaderboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-rocket"></i>
+                <span>StartFlow</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="models.html" class="nav-link">Models</a>
+                <a href="leaderboard.html" class="nav-link active">Leaderboard</a>
+                <a href="providers.html" class="nav-link">Providers</a>
+                <a href="apps.html" class="nav-link">Apps</a>
+                <a href="docs.html" class="nav-link">Docs</a>
+                <button class="nav-cta">Get Started</button>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Model Leaderboard</h1>
+            <p>Compare AI models by performance, price, and capabilities</p>
+            <div class="leaderboard-tabs">
+                <button class="tab-btn active" data-category="overall">Overall</button>
+                <button class="tab-btn" data-category="coding">Coding</button>
+                <button class="tab-btn" data-category="reasoning">Reasoning</button>
+                <button class="tab-btn" data-category="vision">Vision</button>
+                <button class="tab-btn" data-category="multilingual">Multilingual</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label>Time Period</label>
+                    <select id="timeFilter">
+                        <option value="week">This Week</option>
+                        <option value="month" selected>This Month</option>
+                        <option value="quarter">This Quarter</option>
+                        <option value="year">This Year</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Provider</label>
+                    <select id="providerFilter">
+                        <option value="">All Providers</option>
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="google">Google</option>
+                        <option value="meta">Meta</option>
+                        <option value="mistral">Mistral</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Price Range</label>
+                    <select id="priceFilter">
+                        <option value="">Any Price</option>
+                        <option value="0-1">$0 - $1 per 1M tokens</option>
+                        <option value="1-5">$1 - $5 per 1M tokens</option>
+                        <option value="5-10">$5 - $10 per 1M tokens</option>
+                        <option value="10+">$10+ per 1M tokens</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard Table -->
+    <section class="leaderboard-section">
+        <div class="container">
+            <div class="leaderboard-header">
+                <h2>Top Models <span id="modelCount">(50)</span></h2>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="table">
+                        <i class="fas fa-table"></i>
+                    </button>
+                    <button class="view-btn" data-view="cards">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="leaderboard-table-container">
+                <table class="leaderboard-table" id="leaderboardTable">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Model</th>
+                            <th>Provider</th>
+                            <th>Score</th>
+                            <th>Price</th>
+                            <th>Context</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboardBody">
+                        <!-- Data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="leaderboard-cards" id="leaderboardCards" style="display: none;">
+                <!-- Cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Metrics -->
+    <section class="metrics-section">
+        <div class="container">
+            <h2>Performance Metrics</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Overall Leader</h3>
+                    <p class="metric-value">GPT-4o</p>
+                    <p class="metric-score">95.2%</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Best Value</h3>
+                    <p class="metric-value">Gemini Pro</p>
+                    <p class="metric-score">$0.50/1M tokens</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Top Coder</h3>
+                    <p class="metric-value">Claude 3.5 Sonnet</p>
+                    <p class="metric-score">94.8%</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Multilingual</h3>
+                    <p class="metric-value">Gemini Pro</p>
+                    <p class="metric-score">92.5%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-rocket"></i>
+                        <span>StartFlow</span>
+                    </div>
+                    <p>One API to access hundreds of AI models. Built for developers, by developers.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="models.html">Models</a>
+                    <a href="leaderboard.html">Leaderboard</a>
+                    <a href="providers.html">Providers</a>
+                    <a href="apps.html">Apps</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Developers</h4>
+                    <a href="docs.html">Documentation</a>
+                    <a href="api.html">API Reference</a>
+                    <a href="sdk.html">SDKs</a>
+                    <a href="examples.html">Examples</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 StartFlow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="leaderboard.js"></script>
+</body>
+</html>
+

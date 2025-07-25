@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StartFlow - Unified AI Model API</title>
+    <meta name="description" content="Access hundreds of AI models through a single API with StartFlow. The unified platform for AI model integration.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-rocket"></i>
+                <span>StartFlow</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#models" class="nav-link">Models</a>
+                <a href="#leaderboard" class="nav-link">Leaderboard</a>
+                <a href="#providers" class="nav-link">Providers</a>
+                <a href="#apps" class="nav-link">Apps</a>
+                <a href="#docs" class="nav-link">Docs</a>
+                <button class="nav-cta">Get Started</button>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    One API.<br>
+                    <span class="gradient-text">Hundreds of AI Models.</span>
+                </h1>
+                <p class="hero-description">
+                    StartFlow provides a unified API that gives you access to hundreds of AI models through a single endpoint. 
+                    Automatically handle fallbacks and select the most cost-effective options for your applications.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Get Started Free
+                    </button>
+                    <button class="btn-secondary">
+                        <i class="fas fa-play"></i>
+                        View Documentation
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">AI Models</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Developers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">1B+</span>
+                        <span class="stat-label">API Calls</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="window-header">
+                        <div class="window-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span>example.py</span>
+                    </div>
+                    <div class="code-content">
+                        <pre><code>import startflow
+
+client = startflow.Client(
+    api_key="your-api-key"
+)
+
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[{
+        "role": "user",
+        "content": "Build a React app"
+    }]
+)
+
+print(response.choices[0].message.content)</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Terminal Section -->
+    <section class="terminal-section">
+        <div class="container">
+            <h2 class="section-title">See StartFlow in Action</h2>
+            <p class="section-subtitle">Watch how easy it is to integrate AI models with our unified API</p>
+            <div class="terminal-container">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="terminal-title">startflow-demo</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="command" id="cmd1"></span>
+                            <span class="cursor">_</span>
+                        </div>
+                        <div class="terminal-output" id="output1"></div>
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="command" id="cmd2"></span>
+                            <span class="cursor">_</span>
+                        </div>
+                        <div class="terminal-output" id="output2"></div>
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="command" id="cmd3"></span>
+                            <span class="cursor">_</span>
+                        </div>
+                        <div class="terminal-output" id="output3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose StartFlow?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>Unified API</h3>
+                    <p>One simple API to access hundreds of AI models from different providers. No need to manage multiple integrations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Automatic Fallbacks</h3>
+                    <p>Intelligent fallback system ensures your app stays running even when individual models or providers have issues.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Cost Optimization</h3>
+                    <p>Automatically select the most cost-effective models for your use case without compromising on quality.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>High Performance</h3>
+                    <p>Optimized routing and caching for lightning-fast response times across all supported models.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Real-time Analytics</h3>
+                    <p>Monitor your API usage, costs, and performance metrics with our comprehensive dashboard.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Developer Friendly</h3>
+                    <p>Easy integration with popular frameworks and SDKs. Extensive documentation and code examples.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Models Section -->
+    <section id="models" class="models">
+        <div class="container">
+            <h2 class="section-title">Popular Models</h2>
+            <div class="models-grid">
+                <div class="model-card">
+                    <div class="model-header">
+                        <div class="model-avatar" style="background: #10a37f; color: white; font-weight: bold;">O</div>
+                        <div>
+                            <h3>GPT-4o</h3>
+                            <span class="provider">OpenAI</span>
+                        </div>
+                    </div>
+                    <div class="model-stats">
+                        <span class="price">$5.00 / 1M tokens</span>
+                        <span class="context">128K context</span>
+                    </div>
+                    <div class="model-tags">
+                        <span class="tag">Vision</span>
+                        <span class="tag">Code</span>
+                    </div>
+                </div>
+                <div class="model-card">
+                    <div class="model-header">
+                        <div class="model-avatar" style="background: #4285f4; color: white; font-weight: bold;">G</div>
+                        <div>
+                            <h3>Gemini Pro</h3>
+                            <span class="provider">Google</span>
+                        </div>
+                    </div>
+                    <div class="model-stats">
+                        <span class="price">$0.50 / 1M tokens</span>
+                        <span class="context">1M context</span>
+                    </div>
+                    <div class="model-tags">
+                        <span class="tag">Multimodal</span>
+                        <span class="tag">Fast</span>
+                    </div>
+                </div>
+                <div class="model-card">
+                    <div class="model-header">
+                        <div class="model-avatar" style="background: #7c3aed; color: white; font-weight: bold;">A</div>
+                        <div>
+                            <h3>Claude 3.5 Sonnet</h3>
+                            <span class="provider">Anthropic</span>
+                        </div>
+                    </div>
+                    <div class="model-stats">
+                        <span class="price">$3.00 / 1M tokens</span>
+                        <span class="context">200K context</span>
+                    </div>
+                    <div class="model-tags">
+                        <span class="tag">Reasoning</span>
+                        <span class="tag">Safe</span>
+                    </div>
+                </div>
+                <div class="model-card">
+                    <div class="model-header">
+                        <div class="model-avatar" style="background: #ff6b35; color: white; font-weight: bold;">M</div>
+                        <div>
+                            <h3>Llama 3.1 405B</h3>
+                            <span class="provider">Meta</span>
+                        </div>
+                    </div>
+                    <div class="model-stats">
+                        <span class="price">$3.50 / 1M tokens</span>
+                        <span class="context">128K context</span>
+                    </div>
+                    <div class="model-tags">
+                        <span class="tag">Open Source</span>
+                        <span class="tag">Large</span>
+                    </div>
+                </div>
+            </div>
+            <div class="models-cta">
+                <button class="btn-outline">View All Models</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section id="leaderboard" class="leaderboard">
+        <div class="container">
+            <h2 class="section-title">Model Leaderboard</h2>
+            <div class="leaderboard-table">
+                <div class="table-header">
+                    <span>Rank</span>
+                    <span>Model</span>
+                    <span>Provider</span>
+                    <span>Performance</span>
+                    <span>Price</span>
+                </div>
+                <div class="table-row">
+                    <span class="rank">1</span>
+                    <span class="model-name">GPT-4o</span>
+                    <span class="provider-badge">OpenAI</span>
+                    <span class="performance">95.2%</span>
+                    <span class="price-tag">$5.00</span>
+                </div>
+                <div class="table-row">
+                    <span class="rank">2</span>
+                    <span class="model-name">Claude 3.5 Sonnet</span>
+                    <span class="provider-badge">Anthropic</span>
+                    <span class="performance">94.8%</span>
+                    <span class="price-tag">$3.00</span>
+                </div>
+                <div class="table-row">
+                    <span class="rank">3</span>
+                    <span class="model-name">Gemini Pro</span>
+                    <span class="provider-badge">Google</span>
+                    <span class="performance">92.5%</span>
+                    <span class="price-tag">$0.50</span>
+                </div>
+                <div class="table-row">
+                    <span class="rank">4</span>
+                    <span class="model-name">Llama 3.1 405B</span>
+                    <span class="provider-badge">Meta</span>
+                    <span class="performance">91.2%</span>
+                    <span class="price-tag">$3.50</span>
+                </div>
+                <div class="table-row">
+                    <span class="rank">5</span>
+                    <span class="model-name">Mistral Large</span>
+                    <span class="provider-badge">Mistral</span>
+                    <span class="performance">89.7%</span>
+                    <span class="price-tag">$2.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Providers Section -->
+    <section id="providers" class="providers">
+        <div class="container">
+            <h2 class="section-title">Supported Providers</h2>
+            <div class="providers-grid">
+                <div class="provider-card">
+                    <div class="provider-avatar" style="background: #10a37f; color: white; font-weight: bold; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 50%; font-size: 1.5rem;">O</div>
+                    <h3>OpenAI</h3>
+                    <p>GPT-4, GPT-3.5, DALL-E</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-avatar" style="background: #7c3aed; color: white; font-weight: bold; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 50%; font-size: 1.5rem;">A</div>
+                    <h3>Anthropic</h3>
+                    <p>Claude 3.5, Claude 3</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-avatar" style="background: #4285f4; color: white; font-weight: bold; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 50%; font-size: 1.5rem;">G</div>
+                    <h3>Google</h3>
+                    <p>Gemini Pro, Gemini Flash</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-avatar" style="background: #ff6b35; color: white; font-weight: bold; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 50%; font-size: 1.5rem;">M</div>
+                    <h3>Meta</h3>
+                    <p>Llama 3.1, Llama 3</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-avatar" style="background: #22c55e; color: white; font-weight: bold; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 50%; font-size: 1.5rem;">Mi</div>
+                    <h3>Mistral</h3>
+                    <p>Mistral Large, Mixtral</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-avatar" style="background: #3b82f6; color: white; font-weight: bold; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 50%; font-size: 1.5rem;">C</div>
+                    <h3>Cohere</h3>
+                    <p>Command R+, Command R</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apps Section -->
+    <section id="apps" class="apps">
+        <div class="container">
+            <h2 class="section-title">Popular Apps Using StartFlow</h2>
+            <div class="apps-grid">
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>ChatFlow</h3>
+                    <p>AI-powered chat application with multiple model support</p>
+                    <div class="app-stats">
+                        <span>50K+ users</span>
+                        <span>4.8★ rating</span>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>CodeGenius</h3>
+                    <p>Advanced code generation and debugging assistant</p>
+                    <div class="app-stats">
+                        <span>25K+ users</span>
+                        <span>4.9★ rating</span>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Artisan AI</h3>
+                    <p>Creative content generation and image creation</p>
+                    <div class="app-stats">
+                        <span>100K+ users</span>
+                        <span>4.7★ rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How does StartFlow work?</h3>
+                    <p>StartFlow acts as a unified API gateway that routes your requests to the best available AI model based on your requirements, cost constraints, and performance needs.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is there a free tier?</h3>
+                    <p>Yes! StartFlow offers a generous free tier with 100K tokens per month. Perfect for testing and small projects.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I get started?</h3>
+                    <p>Simply sign up for an account, get your API key, and start making requests. Our documentation has quick-start guides for all major languages.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I use my existing OpenAI code?</h3>
+                    <p>Absolutely! StartFlow is fully compatible with the OpenAI API format. Just change the base URL and you're good to go.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-rocket"></i>
+                        <span>StartFlow</span>
+                    </div>
+                    <p>One API to access hundreds of AI models. Built for developers, by developers.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="#models">Models</a>
+                    <a href="#leaderboard">Leaderboard</a>
+                    <a href="#providers">Providers</a>
+                    <a href="#apps">Apps</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Developers</h4>
+                    <a href="#docs">Documentation</a>
+                    <a href="#api">API Reference</a>
+                    <a href="#sdk">SDKs</a>
+                    <a href="#examples">Examples</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="#about">About</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#careers">Careers</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 StartFlow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
